@@ -1,0 +1,22 @@
+[setup]
+nixPkgs = ["...", "nodePackages_latest.gulp", "pm2", "glibc", "flatpak", "fontconfig"]
+aptPkgs = ['curl', 'wget', 'libgeoip-dev', 'gnupg', 'ffmpeg', 'imagemagick', 'graphicsmagick', 'fontconfig', 'fonts-dejavu']
+
+[build]
+builder = "NIXPACKS"
+nixpacksConfigPath = "nixpacks.toml"
+cmd = 'npm run setup'
+# dockerfilePath = "docker/jschan/Dockerfile"
+
+[install]
+cmd = "npm install"
+
+[start]
+startCommand = 'npm run start'
+
+[deploy]
+runtime = "V2"
+numReplicas = 1
+sleepApplication = false
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10

@@ -1,0 +1,25 @@
+providers = ["...", "node"]
+
+[phases.setup]
+nixPkgs = ["...", "nodePackages_latest.gulp", "pm2", "flatpak", "fontconfig", "glibc", "ffmpeg"]
+nixLibs = ["..."]
+aptPkgs = ['curl', 'wget', 'libgeoip-dev', 'gnupg', 'imagemagick', 'graphicsmagick', 'fontconfig', 'fonts-dejavu']
+
+[phases.install]
+cmd = 'npm install'
+
+[phases.build]
+builder = "nixpacks"
+
+# [phases.deploy]
+# startCommand = 'pm2 start npm -- start'
+# restartPolicyType = "always"
+# restartPolicyMaxRetries = 5
+
+# [variables]
+# NODE_ENV = "production"
+# RPC_URL = "https://arbitrum.llamarpc.com"
+# PORT = "3000"
+
+[start]
+cmds = ['npm run start']

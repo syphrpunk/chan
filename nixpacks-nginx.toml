@@ -1,0 +1,30 @@
+providers = ["...", "node"]
+
+[phases.build]
+builder = "nixpacks"
+
+[phases.setup]
+nixPkgs = ["...", "nodePackages_latest.gulp", "pm2", "git"]
+aptPkgs = ['curl', 'wget', 'libgeoip-dev', 'gnupg', 'ffmpeg', 'imagemagick', 'graphicsmagick', 'fontconfig', 'fonts-dejavu']
+
+[phases.install]
+cmd = 'npm install'
+
+[phases.deploy]
+cmd = 'npm run setup'
+
+# [phases.deploy]
+# startCommand = './skandha standalone --testingMode --configFile "/app/config.json" --dataDir "/var/lib/"'
+# restartPolicyType = "always"
+# restartPolicyMaxRetries = 5
+
+# [variables]
+# NODE_ENV = "production"
+# ENTRYPOINT = "0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789,0x0000000071727De22E5E9d8BAf0edAc6f37da032"
+# SIGNER_PRIVATE_KEY = "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
+# BENEFICIARY_ADDRESS = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+# RPC_URL = "https://arbitrum.llamarpc.com"
+# PORT = "3000"
+
+[start]
+cmd = 'npm run reset'

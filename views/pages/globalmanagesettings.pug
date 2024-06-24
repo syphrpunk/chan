@@ -1,0 +1,60 @@
+extends ../layout.pug
+include ../mixins/globalmanagenav.pug
+
+block head
+	title #{__('Settings')}
+
+block content
+	h1.board-title #{__('Global Management')}
+	br
+	+globalmanagenav('settings')
+	hr(size=1)
+	h4.no-m-p #{__('Settings')}:
+	.form-wrapper.flexleft
+		form.form-post(action=`/forms/global/settings`, enctype='application/x-www-form-urlencoded', method='POST')
+			input(type='hidden' name='_csrf' value=csrf)
+			.mv-10
+				.sm#tab-1
+					.sm#tab-2
+						.sm#tab-3
+							.sm#tab-4
+								.sm#tab-5
+									.sm#tab-6
+										.sm#tab-7
+											.sm#tab-8
+												.sm#tab-9
+													.sm#tab-10
+														.sm#tab-11
+															.tabbed-area
+																include ../includes/globalmanagesettings.pug
+			include ../includes/forceactiontwofactor.pug
+			input.row(type='submit', value=__('Save settings'))
+	hr(size=1)
+	h4.no-m-p #{__('Delete board')}:
+	.form-wrapper.flexleft.mt-10
+		form.form-post(action=`/forms/global/deleteboard`, enctype='application/x-www-form-urlencoded', method='POST')
+			input(type='hidden' name='_csrf' value=csrf)
+			.row
+				.label #{__('Board URI')}
+				input(type='text' name='uri' required)
+			.row
+				.label #{__("I'm sure")}
+				label.postform-style.ph-5
+					input(type='checkbox', name='confirm', value='true' required)
+			input(type='submit', value=__('Submit'))
+	hr(size=1)
+	h4.no-m-p #{__('Clear All')}:
+	.form-wrapper.flexleft.mt-10
+		form.form-post(action=`/forms/global/clear`, enctype='application/x-www-form-urlencoded', method='POST')
+			input(type='hidden' name='_csrf' value=csrf)
+			.row
+				.label #{__('Table')}
+				select(name='table')
+					option(value='sessions') #{__('Login Sessions')}
+					option(value='blockbypass') #{__('Block Bypasses')}
+			.row
+				.label #{__("I'm sure")}
+				label.postform-style.ph-5
+					input(type='checkbox', name='confirm', value='true' required)
+			include ../includes/forceactiontwofactor.pug
+			input(type='submit', value=__('Submit'))
