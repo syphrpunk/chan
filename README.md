@@ -1,19 +1,12 @@
 # jschan
 
-Anonymous imageboard software that doesn't suck.
+Anonymous imageboard software that doesn't suck. Deployed on railway :)
 
 Mirror(s):
- - https://gitgud.io/fatchan/jschan
- - https://git.basedflare.com/fatchan/jschan
+ - #TODO
 
 Live instances (Unofficial):
- - 🇺🇸 https://94chan.org
- - 🇵🇹/🇧🇷 https://ptchan.org
-
-Contact via:
- - [Session](https://getsession.org/): `051b2ff270769d20764fa1b8e6bc3240b0a3c28ffb3242e7cce60db479b23ef427`
- - IRC: [open in client](ircs://irc.fatpeople.lol:6697/general) or [webchat](https://irc-web.fatpeople.lol/#general)
- - Email: see my gitgud profile
+ - 🏴‍☠️ https://boards.archetype.blue
 
 ## Features
  - [x] Multiple language support (🇬🇧 🇵🇹 🇧🇷 🇷🇺 🇮🇹 🇪🇸)
@@ -57,8 +50,5 @@ Unofficial: **Not guaranteed to work or be safe, use at your own risk.**
  - [reporter](https://git.ptchan.org/reporter/) - news bot that fetches news from a provider and posts a snippet of it on a configurable board of a configurable jschan imageboard
  - [yacam](https://git.ptchan.org/yacam/) - a bot that tries to detect (dumb) spam on jschan imageboards and does something about it
 
-## For generous people
-
-Bitcoin (BTC): [`bc1q4elrlz5puak4m9xy3hfvmpempnpqpu95v8s9m6`](bitcoin:bc1q4elrlz5puak4m9xy3hfvmpempnpqpu95v8s9m6)
-
-Monero (XMR): [`89J9DXPLUBr5HjNDNZTEo4WYMFTouSsGjUjBnUCCUxJGUirthnii4naZ8JafdnmhPe4NP1nkWsgcK82Uga7X515nNR1isuh`](monero:89J9DXPLUBr5HjNDNZTEo4WYMFTouSsGjUjBnUCCUxJGUirthnii4naZ8JafdnmhPe4NP1nkWsgcK82Uga7X515nNR1isuh)
+## Credits
+  - [fatchan](https://gitgud.io/fatchan/jschan) - Original Developer & Repo
